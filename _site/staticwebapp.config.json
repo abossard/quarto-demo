@@ -1,20 +1,28 @@
 {
     "trailingSlash": "auto",
     "routes": [
-      {
-        "route": "/about*",
-        "allowedRoles": ["authenticated"]
-      }
-    ],
-    "auth": {
-      "identityProviders": {
-        "azureActiveDirectory": {
-          "registration": {
-            "openIdIssuer": "https://login.microsoftonline.com/16b3c013-d300-468d-ac64-7eda0820b6d3/v2.0",
-            "clientIdSettingName": "AZURE_CLIENT_ID",
-            "clientSecretSettingName": "AZURE_CLIENT_SECRET_APP_SETTING_NAME"
-          }
+        {
+            "route": "/*",
+            "allowedRoles": [
+                "authenticated"
+            ]
         }
-      }
+    ],
+    "responseOverrides": {
+        "401": {
+            "statusCode": 302,
+            "redirect": "/.auth/login/aad"
+        }
+    },
+    "auth": {
+        "identityProviders": {
+            "azureActiveDirectory": {
+                "registration": {
+                    "openIdIssuer": "https://login.microsoftonline.com/16b3c013-d300-468d-ac64-7eda0820b6d3/v2.0",
+                    "clientIdSettingName": "AZURE_CLIENT_ID",
+                    "clientSecretSettingName": "AZURE_CLIENT_SECRET_APP_SETTING_NAME"
+                }
+            }
+        }
     }
-  }
+}
