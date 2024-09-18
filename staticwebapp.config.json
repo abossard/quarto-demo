@@ -16,7 +16,6 @@
     },
     "auth": {
         "identityProviders": {
-
             "github": {
                 "registration": {
                   "clientIdSettingName": "GITHUB_CLIENT_ID",
