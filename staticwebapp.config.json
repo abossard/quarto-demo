@@ -4,7 +4,7 @@
         {
             "route": "/*",
             "allowedRoles": [
-                "contributor"
+                "reader"
             ]
         }
     ],
@@ -21,6 +21,12 @@
                     "openIdIssuer": "https://login.microsoftonline.com/16b3c013-d300-468d-ac64-7eda0820b6d3/v2.0",
                     "clientIdSettingName": "AZURE_CLIENT_ID",
                     "clientSecretSettingName": "AZURE_CLIENT_SECRET_APP_SETTING_NAME"
+                }
+            },
+            "github": {
+                "registration": {
+                  "clientIdSettingName": "GITHUB_CLIENT_ID",
+                  "clientSecretSettingName": "GITHUB_CLIENT_SECRET"
                 }
             }
         }
