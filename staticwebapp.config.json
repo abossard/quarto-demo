@@ -11,11 +11,12 @@
     "responseOverrides": {
         "401": {
             "statusCode": 302,
-            "redirect": "/.auth/login/aad"
+            "redirect": "/.auth/login/github"
         }
     },
     "auth": {
         "identityProviders": {
+
             "github": {
                 "registration": {
                   "clientIdSettingName": "GITHUB_CLIENT_ID",
